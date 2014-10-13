@@ -28,16 +28,16 @@
 		return a;
 	}
 
-	/* SelectFx function */
-	function SelectFx( el, options ) {
+	/* SwatchSelector function */
+	function SwatchSelector( el, options ) {
 		this.el = el;
 		this.options = extend( {}, this.options );
 		extend( this.options, options );
 		this._init();
 	}
 
-	/* SelectFx options */
-	SelectFx.prototype.options = {
+	/* SwatchSelector options */
+	SwatchSelector.prototype.options = {
 		// if true all the links will open in a new tab.
 		// if we want to be redirected when we click an option, we need to define a data-link attr on the option of the native select element
 		newTab : true,
@@ -48,7 +48,7 @@
 	}
 
 	/* init function and initialize and cache some vars */
-	SelectFx.prototype._init = function() {
+	SwatchSelector.prototype._init = function() {
 		// check if we are using a placeholder for the native select box
 		// we assume the placeholder is disabled and selected by default
 		var selectedOpt = this.el.querySelector( 'option[selected]' );
@@ -77,7 +77,7 @@
 	}
 
 	/* creates the structure for the select element */
-	SelectFx.prototype._createSelectEl = function() {
+	SwatchSelector.prototype._createSelectEl = function() {
 		var self = this, options = '', createOptionHTML = function(el) {
 			var optclass = '', classes = '', link = '';
 
@@ -130,7 +130,7 @@
 	/**
 	 * initialize the events
 	 */
-	SelectFx.prototype._initEvents = function() {
+	SwatchSelector.prototype._initEvents = function() {
 		var self = this;
 
 		// open/close select
@@ -161,7 +161,7 @@
 	 * open/close select
 	 * when opened show the default placeholder if any
 	 */
-	SelectFx.prototype._toggleSelect = function() {
+	SwatchSelector.prototype._toggleSelect = function() {
 		// remove focus class if any..
 		this._removeFocus();
 
@@ -182,7 +182,7 @@
 	}
 
 	/* change option - the new value is set */
-	SelectFx.prototype._changeOption = function() {
+	SwatchSelector.prototype._changeOption = function() {
 		// if pre selected current (if we navigate with the keyboard)...
 		if( typeof this.preSelCurrent != 'undefined' && this.preSelCurrent !== -1 ) {
 			this.current = this.preSelCurrent;
@@ -221,12 +221,12 @@
 	}
 
 	/* returns true if select element is opened */
-	SelectFx.prototype._isOpen = function(opt) {
+	SwatchSelector.prototype._isOpen = function(opt) {
 		return classie.has( this.selEl, 'swatch-active' );
 	}
 
 	/* removes the focus class from the option */
-	SelectFx.prototype._removeFocus = function(opt) {
+	SwatchSelector.prototype._removeFocus = function(opt) {
 		var focusEl = this.selEl.querySelector( 'li.swatch-focus' )
 		if( focusEl ) {
 			classie.remove( focusEl, 'swatch-focus' );
@@ -234,6 +234,6 @@
 	}
 
 	/* add to global namespace */
-	window.SelectFx = SelectFx;
+	window.SwatchSelector = SwatchSelector;
 
 } )( window );
