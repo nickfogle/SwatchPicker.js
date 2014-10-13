@@ -1,13 +1,15 @@
 <html>
 <head>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 
 <label class="page1">Theme</label>
 <div class="tooltips" title="Please select the country that the customer will primarily be served from">
-    <select id="country" name="Theme" placeholder="Theme">
+    <select id="color" name="Theme" placeholder="Theme">
         <option></option>
         <option>Blue</option>
         <option>Red</option>
@@ -49,9 +51,8 @@
 </select>
 
 
-<script src="scripts.js"></script>
-	<script src="classie.js"></script>
-		<script src="SwatchSelector.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/classie.js"></script>
       <script>
 			(function() {
 				[].slice.call( document.querySelectorAll( 'select.swatch-select' ) ).forEach( function(el) {
@@ -61,7 +62,7 @@
 							document.querySelector('span.swatch-placeholder').style.backgroundColor = val;
 						}
 					});
-				} );
+				});
 			})();
 		</script>
 </body>

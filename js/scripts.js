@@ -50,7 +50,7 @@
 	/* init function and initialize and cache some vars */
 	SwatchSelector.prototype._init = function() {
 		// check if we are using a placeholder for the native select box
-		// we assume the placeholder is disabled and selected by default
+		// the placeholder is disabled and selected by default
 		var selectedOpt = this.el.querySelector( 'option[selected]' );
 		this.hasDefaultPlaceholder = selectedOpt && selectedOpt.disabled;
 
