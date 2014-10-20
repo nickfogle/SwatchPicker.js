@@ -35,11 +35,13 @@
 		extend( this.options, options );
 		this._init();
 	}
-	/* init function and initialize and cache some vars */
+	/* initialize functions and variables and cache vars */
 	SwatchSelector.prototype._init = function() {
-		// check if we are using a placeholder for the native select box
-		// the placeholder is disabled and selected by default
+
+		// check if native select box is using a placeholder
 		var selectedOpt = this.el.querySelector( 'option[selected]' );
+
+		// the placeholder is disabled and selected by default
 		this.hasDefaultPlaceholder = selectedOpt && selectedOpt.disabled;
 
 		// get selected option (either the first option with attr selected or just the first option)
@@ -64,7 +66,7 @@
 		this._initEvents();
 	}
 
-	/* creates the structure for the select element */
+	/* creates html structure for select element */
 	SwatchSelector.prototype._createSelectEl = function() {
 		var self = this, options = '', createOptionHTML = function(el) {
 			var optclass = '', classes = '', link = '';
@@ -134,7 +136,7 @@
 			} );
 		} );
 
-		// close the select element if the target it´s not the select element or one of its descendants..
+		// close the select element if the target isn't the select element or its descendants..
 		document.addEventListener( 'click', function(ev) {
 			var target = ev.target;
 			if( self._isOpen() && target !== self.selEl && !hasParent( target, self.selEl ) ) {
@@ -143,16 +145,15 @@
 		} );
 	}
 
-	/**
-	 * open/close select
-	 * when opened show the default placeholder if any
-	 */
+	/* toggle select - when opened show the default placeholder if any */
 	SwatchSelector.prototype._toggleSelect = function() {
+
 		// remove focus class if any..
 		this._removeFocus();
 
 		if( this._isOpen() ) {
 			if( this.current !== -1 ) {
+
 				// update placeholder text
 				this.selPlaceholder.textContent = this.selOpts[ this.current ].textContent;
 			}
