@@ -35,18 +35,6 @@
 		extend( this.options, options );
 		this._init();
 	}
-
-	/* SwatchSelector options */
-	SwatchSelector.prototype.options = {
-		// if true all the links will open in a new tab.
-		// define a data-link attr on the option of the native select element to trigger overlay
-		newTab : true,
-		// when opening the select element, the default placeholder (if any) is shown
-		stickyPlaceholder : true,
-		// callback when changing the value
-		onChange : function( val ) { return false; }
-	}
-
 	/* init function and initialize and cache some vars */
 	SwatchSelector.prototype._init = function() {
 		// check if we are using a placeholder for the native select box
