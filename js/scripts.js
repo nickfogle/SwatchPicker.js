@@ -39,7 +39,7 @@
 	/* SwatchSelector options */
 	SwatchSelector.prototype.options = {
 		// if true all the links will open in a new tab.
-		// if we want to be redirected when we click an option, we need to define a data-link attr on the option of the native select element
+		// define a data-link attr on the option of the native select element to trigger overlay
 		newTab : true,
 		// when opening the select element, the default placeholder (if any) is shown
 		stickyPlaceholder : true,
@@ -127,9 +127,7 @@
 		this.selEl.appendChild( this.el );
 	}
 
-	/**
-	 * initialize the events
-	 */
+	/* initialize events */
 	SwatchSelector.prototype._initEvents = function() {
 		var self = this;
 
@@ -180,7 +178,6 @@
 			classie.add( this.selEl, 'swatch-active' );
 		}
 	}
-
 	/* change option - the new value is set */
 	SwatchSelector.prototype._changeOption = function() {
 		// if pre selected current (if we navigate with the keyboard)...
@@ -215,11 +212,9 @@
 				window.location = opt.getAttribute( 'data-link' );
 			}
 		}
-
 		// callback
 		this.options.onChange( this.el.value );
 	}
-
 	/* returns true if select element is opened */
 	SwatchSelector.prototype._isOpen = function(opt) {
 		return classie.has( this.selEl, 'swatch-active' );
