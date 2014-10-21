@@ -1,13 +1,10 @@
 /**
  * swatchSelector v. 1.1
- *
- * Copyright 2014, Nick Fogle
  * http://nickfogle.com
  */
 ;( function( window ) {
 
 	'use strict';
-
 	/* from https://github.com/inuyaksa/jquery.nicescroll/blob/master/jquery.nicescroll.js */
 	function hasParent( e, p ) {
 		if (!e) return false;
@@ -17,7 +14,6 @@
 		}
 		return (el!==false);
 	};
-
 	/* extend obj function */
 	function extend( a, b ) {
 		for( var key in b ) {
@@ -27,7 +23,6 @@
 		}
 		return a;
 	}
-
 	/* SwatchSelector function */
 	function SwatchSelector( el, options ) {
 		this.el = el;
@@ -35,37 +30,27 @@
 		extend( this.options, options );
 		this._init();
 	}
-	/* initialize functions and variables and cache vars */
+	/* initialize variables, functions and cache vars */
 	SwatchSelector.prototype._init = function() {
-
 		// check if native select box is using a placeholder
 		var selectedOpt = this.el.querySelector( 'option[selected]' );
-
 		// the placeholder is disabled and selected by default
 		this.hasDefaultPlaceholder = selectedOpt && selectedOpt.disabled;
-
-		// get selected option (either the first option with attr selected or just the first option)
+		// get selected option (either first option or first with attr selected)
 		this.selectedOpt = selectedOpt || this.el.querySelector( 'option' );
-
 		// create structure
 		this._createSelectEl();
-
 		// all options
 		this.selOpts = [].slice.call( this.selEl.querySelectorAll( 'li[data-option]' ) );
-
 		// total options
 		this.selOptsCount = this.selOpts.length;
-
 		// current index
 		this.current = this.selOpts.indexOf( this.selEl.querySelector( 'li.swatch-selected' ) ) || -1;
-
 		// placeholder elem
 		this.selPlaceholder = this.selEl.querySelector( 'span.swatch-placeholder' );
-
 		// init events
 		this._initEvents();
 	}
-
 	/* creates html structure for select element */
 	SwatchSelector.prototype._createSelectEl = function() {
 		var self = this, options = '', createOptionHTML = function(el) {
@@ -83,11 +68,9 @@
 			if( el.getAttribute( 'data-link' ) ) {
 				link = 'data-link=' + el.getAttribute( 'data-link' );
 			}
-
 			if( classes !== '' ) {
 				optclass = 'class="' + classes + '" ';
 			}
-
 			return '<li ' + optclass + link + ' data-option data-value="' + el.value + '"><span>' + el.textContent + '</span></li>';
 		};
 
@@ -107,7 +90,6 @@
 				options += '</ul></li>';
 			}
 		} );
-
 		var opts_el = '<div class="swatch-options"><ul>' + options + '</ul></div>';
 		this.selEl = document.createElement( 'div' );
 		this.selEl.className = this.el.className;
@@ -116,7 +98,6 @@
 		this.el.parentNode.appendChild( this.selEl );
 		this.selEl.appendChild( this.el );
 	}
-
 	/* initialize events */
 	SwatchSelector.prototype._initEvents = function() {
 		var self = this;
@@ -125,13 +106,12 @@
 		this.selPlaceholder.addEventListener( 'click', function() {
 			self._toggleSelect();
 		} );
-
 		// clicking the options
 		this.selOpts.forEach( function(opt, idx) {
 			opt.addEventListener( 'click', function() {
 				self.current = idx;
 				self._changeOption();
-				// close select elem
+				// close select element
 				self._toggleSelect();
 			} );
 		} );
@@ -144,7 +124,6 @@
 			}
 		} );
 	}
-
 	/* toggle select - when opened show the default placeholder if any */
 	SwatchSelector.prototype._toggleSelect = function() {
 
@@ -174,7 +153,6 @@
 			this.current = this.preSelCurrent;
 			this.preSelCurrent = -1;
 		}
-
 		// current option
 		var opt = this.selOpts[ this.current ];
 
@@ -208,7 +186,6 @@
 	SwatchSelector.prototype._isOpen = function(opt) {
 		return classie.has( this.selEl, 'swatch-active' );
 	}
-
 	/* removes the focus class from the option */
 	SwatchSelector.prototype._removeFocus = function(opt) {
 		var focusEl = this.selEl.querySelector( 'li.swatch-focus' )
@@ -216,7 +193,6 @@
 			classie.remove( focusEl, 'swatch-focus' );
 		}
 	}
-
 	/* add to global namespace */
 	window.SwatchSelector = SwatchSelector;
 

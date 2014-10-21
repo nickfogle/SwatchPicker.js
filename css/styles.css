@@ -434,11 +434,6 @@ a:hover, a:focus {
 	outline: none;
 }
 
-/* Background Color */
-.blue-bg { background: #3498DB; color: #fff; }
-.blue-bg a { color: #1e6fa4; }
-.blue-bg a:hover, .blue-bg a:focus { color: #125480; }
-
 section {
 	padding: 4% 1em 10%;
 	text-align: center;
