@@ -1,100 +1,26 @@
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-</head>
-<body>
-
-<label class="page1">Theme</label>
-<div class="tooltips" title="Please select the swatch you would like below.">
-    <select id="color" name="Theme" placeholder="Theme">
-        <option></option>
-        <option>Blue</option>
-        <option>Red</option>
-        <option>Yellow</option>
-        <option>Green</option>
-        <option>Orange</option>
-    </select>
-</div>
-<br />
-<br />
-<select class="swatch-select swatch-modal-picker">
-					<option value="" disabled selected>Pick your color</option>
-					<option value="#588c75" data-class="color-588c75">#588c75</option>
-					<option value="#b0c47f" data-class="color-b0c47f">#b0c47f</option>
-					<option value="#f3e395" data-class="color-f3e395">#f3e395</option>
-					<option value="#f3ae73" data-class="color-f3ae73">#f3ae73</option>
-					<option value="#da645a" data-class="color-da645a">#da645a</option>
-					<option value="#79a38f" data-class="blue-bg9a38f">#79a38f</option>
-					<option value="#c1d099" data-class="color-c1d099">#c1d099</option>
-					<option value="#f5eaaa" data-class="color-f5eaaa">#f5eaaa</option>
-					<option value="#f5be8f" data-class="color-f5be8f">#f5be8f</option>
-					<option value="#e1837b" data-class="color-e1837b">#e1837b</option>
-					<option value="#9bbaab" data-class="color-9bbaab">#9bbaab</option>
-					<option value="#d1dcb2" data-class="color-d1dcb2">#d1dcb2</option>
-					<option value="#f9eec0" data-class="color-f9eec0">#f9eec0</option>
-					<option value="#f7cda9" data-class="color-f7cda9">#f7cda9</option>
-					<option value="#e8a19b" data-class="color-e8a19b">#e8a19b</option>
-					<option value="#bdd1c8" data-class="color-bdd1c8">#bdd1c8</option>
-					<option value="#e1e7cd" data-class="color-e1e7cd">#e1e7cd</option>
-					<option value="#faf4d4" data-class="color-faf4d4">#faf4d4</option>
-					<option value="#fbdfc9" data-class="color-fbdfc9">#fbdfc9</option>
-					<option value="#f1c1bd" data-class="color-f1c1bd">#f1c1bd</option>
-               <option value="#588c75" data-class="color-588c75">#588c75</option>
-               <option value="#b0c47f" data-class="color-b0c47f">#b0c47f</option>
-               <option value="#f3e395" data-class="color-f3e395">#f3e395</option>
-               <option value="#f3ae73" data-class="color-f3ae73">#f3ae73</option>
-               <option value="#da645a" data-class="color-da645a">#da645a</option>
-               <option value="#79a38f" data-class="blue-bg9a38f">#79a38f</option>
-               <option value="#c1d099" data-class="color-c1d099">#c1d099</option>
-               <option value="#f5eaaa" data-class="color-f5eaaa">#f5eaaa</option>
-               <option value="#f5be8f" data-class="color-f5be8f">#f5be8f</option>
-               <option value="#e1837b" data-class="color-e1837b">#e1837b</option>
-               <option value="#9bbaab" data-class="color-9bbaab">#9bbaab</option>
-               <option value="#d1dcb2" data-class="color-d1dcb2">#d1dcb2</option>
-               <option value="#f9eec0" data-class="color-f9eec0">#f9eec0</option>
-               <option value="#f7cda9" data-class="color-f7cda9">#f7cda9</option>
-               <option value="#e8a19b" data-class="color-e8a19b">#e8a19b</option>
-               <option value="#bdd1c8" data-class="color-bdd1c8">#bdd1c8</option>
-               <option value="#e1e7cd" data-class="color-e1e7cd">#e1e7cd</option>
-               <option value="#faf4d4" data-class="color-faf4d4">#faf4d4</option>
-               <option value="#fbdfc9" data-class="color-fbdfc9">#fbdfc9</option>
-               <option value="#f1c1bd" data-class="color-f1c1bd">#f1c1bd</option>
-               <option value="#588c75" data-class="color-588c75">#588c75</option>
-               <option value="#b0c47f" data-class="color-b0c47f">#b0c47f</option>
-               <option value="#f3e395" data-class="color-f3e395">#f3e395</option>
-               <option value="#f3ae73" data-class="color-f3ae73">#f3ae73</option>
-               <option value="#da645a" data-class="color-da645a">#da645a</option>
-               <option value="#79a38f" data-class="blue-bg9a38f">#79a38f</option>
-               <option value="#c1d099" data-class="color-c1d099">#c1d099</option>
-               <option value="#f5eaaa" data-class="color-f5eaaa">#f5eaaa</option>
-               <option value="#f5be8f" data-class="color-f5be8f">#f5be8f</option>
-               <option value="#e1837b" data-class="color-e1837b">#e1837b</option>
-               <option value="#9bbaab" data-class="color-9bbaab">#9bbaab</option>
-               <option value="#d1dcb2" data-class="color-d1dcb2">#d1dcb2</option>
-               <option value="#f9eec0" data-class="color-f9eec0">#f9eec0</option>
-               <option value="#f7cda9" data-class="color-f7cda9">#f7cda9</option>
-               <option value="#e8a19b" data-class="color-e8a19b">#e8a19b</option>
-               <option value="#bdd1c8" data-class="color-bdd1c8">#bdd1c8</option>
-               <option value="#e1e7cd" data-class="color-e1e7cd">#e1e7cd</option>
-               <option value="#faf4d4" data-class="color-faf4d4">#faf4d4</option>
-               <option value="#fbdfc9" data-class="color-fbdfc9">#fbdfc9</option>
-               <option value="#f1c1bd" data-class="color-f1c1bd">#f1c1bd</option>
+<select name="options">
+    <option value="">-Please select-</option>
+    <option value="buffet" data-toggle="modal" data-target="#myModal">Buffet</option>
+    <option value="serviced">Serviced Menu</option>
 </select>
-
-<script src="js/scripts.js"></script>
-<script src="js/classie.js"></script>
-      <script>
-			(function() {
-				[].slice.call( document.querySelectorAll( 'select.swatch-select' ) ).forEach( function(el) {
-					new SwatchSelector(el, {
-						stickyPlaceholder: true,
-						onChange: function(val){
-							document.querySelector('span.swatch-placeholder').style.backgroundColor = val;
-						}
-					});
-				});
-			})();
-		</script>
-</body>
-</html>
+<div class="modal fade" id="serviceModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <select class="image-picker show-html">
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/01.png" value="1">Swatch 1</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/02.png" value="2">Swatch 2</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/03.png" value="3">Swatch 3</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/04.png" value="4">Swatch 4</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/05.png" value="5">Swatch 5</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/06.png" value="6">Swatch 6</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/07.png" value="7">Swatch 7</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/08.png" value="8">Swatch 8</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/07.png" value="9">Swatch 9</option>
+                    <option data-img-src="http://nickfogle.com/labs/demo/assets/img/08.png" value="10">Swatch 10</option>
+                </select>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
