@@ -5,9 +5,8 @@
    <link rel="stylesheet" href="http://nickfogle.com/labs/demo/assets/css/bootstrap.css">
    <link rel="stylesheet" href="http://nickfogle.com/labs/demo/assets/css/image-picker.css">
    <link rel="stylesheet" href="http://nickfogle.com/labs/demo/assets/css/main.css">
-
-   <script src="http://nickfogle.com/labs/demo/assets/js/image-picker.js"></script>
    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+   <script src="http://nickfogle.com/labs/demo/assets/js/image-picker.js"></script>
 </head>
 <body>
 
@@ -54,21 +53,21 @@ $('select[name="options"]').on('change', function () {
 })
 // Image Picker
 
-    jQuery("select.image-picker").imagepicker({
+    $("select.image-picker").imagepicker({
       hide_select:  false,
     });
 
-    jQuery("select.image-picker.show-labels").imagepicker({
+    $("select.image-picker.show-labels").imagepicker({
       hide_select:  false,
       show_label:   true,
     });
 
-    jQuery("select.image-picker.limit_callback").imagepicker({
+    $("select.image-picker.limit_callback").imagepicker({
       limit_reached:  function(){alert('We are full!')},
       hide_select:    false
     });
 
-    var container = jQuery("select.image-picker.masonry").next("ul.thumbnails");
+    var container = $("select.image-picker.masonry").next("ul.thumbnails");
     container.imagesLoaded(function(){
       container.masonry({
         itemSelector:   "li",
