@@ -5,8 +5,10 @@
    <link rel="stylesheet" href="http://nickfogle.com/labs/demo/assets/css/bootstrap.css">
    <link rel="stylesheet" href="http://nickfogle.com/labs/demo/assets/css/image-picker.css">
    <link rel="stylesheet" href="http://nickfogle.com/labs/demo/assets/css/main.css">
-   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
    <script src="http://nickfogle.com/labs/demo/assets/js/image-picker.js"></script>
+   <script src="http://nickfogle.com/labs/demo/assets/js/bootstrap.js"></script>
+
 </head>
 <body>
 
@@ -41,15 +43,11 @@
 <script>
 // Modal Trigger
 $('select[name="options"]').on('change', function () {
-
     if ($(this).val() == "buffet") {
         $('#myModal').modal('toggle');
-
     } else if ($(this).val() == "serviced") {
         $('#serviceModal').modal('toggle');
-
     }
-
 })
 // Image Picker
 
@@ -62,11 +60,6 @@ $('select[name="options"]').on('change', function () {
       show_label:   true,
     });
 
-    $("select.image-picker.limit_callback").imagepicker({
-      limit_reached:  function(){alert('We are full!')},
-      hide_select:    false
-    });
-
     var container = $("select.image-picker.masonry").next("ul.thumbnails");
     container.imagesLoaded(function(){
       container.masonry({
@@ -76,7 +69,6 @@ $('select[name="options"]').on('change', function () {
 
 </script>
 
-<script src="http://nickfogle.com/labs/demo/assets/js/bootstrap.js"></script>
 </body>
 
 
