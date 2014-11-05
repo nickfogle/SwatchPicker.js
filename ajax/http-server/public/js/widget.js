@@ -20,24 +20,32 @@ xhr.open('GET', 'data/employees.json');
 xhr.send();
 
 
-var widget = new XMLHttpRequest();
-widget.onreadystatechange = function() {
-   if (widget.readyState === 4) {
-      var rooms = JSON.parse(widget.responseText);
+$(document).ready(function() {
+   var url = 'data/rooms.json';
+
+   var callback = function(response) {
+
       var statusHTML = '<ul class="availability">';
-      for (var i = 0; i < rooms.length; i += 1) {
-         if (rooms[i].available === true) {
+
+      $.each(response, function(index, rooms) {
+
+         if (rooms.available === true) {
             statusHTML += '<li class="empty">';
+
          } else {
             statusHTML += '<li class="full">';
          }
-         statusHTML += rooms[i].room;
-         statusHTML += '</li>';
-      }
+
+         statusHTML += rooms.room + '</li>';
+
+      }); // end loop
 
       statusHTML += '</ul>';
-      document.getElementById('roomList').innerHTML = statusHTML;
-   }
-};
-widget.open('GET', 'data/rooms.json');
-widget.send();
+
+      $('#roomList').html(statusHTML);
+
+   }; // end callback
+
+   $.getJSON(url, callback); // Show me the $$$
+
+}); //end ready
