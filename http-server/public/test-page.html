@@ -1,0 +1,85 @@
+<html>
+
+   <title>Swatch Picker</title>
+
+   <head>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/main.css">
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <script src="http://nickfogle.com/labs/demo/assets/js/image-picker.js"></script>
+   </head>
+
+   <body>
+
+   <h1 class="message">Production Page</h1>
+   <h2 class="message"><a href="index.html">- Main Page</a></h2>
+   <select name="options" class="initial-select">
+       <option value="">-Please select-</option>
+       <option value="swatches">swatches</option>
+       <option value="abstract">abstract</option>
+       <option value="city">city</option>
+       <option value="nature">nature</option>
+       <option value="sports">sports</option>
+       <option value="tech">tech</option>
+   </select>
+   <div class="modal fade" id="myModal">
+       <div class="modal-dialog">
+               <div class="modal-body">
+                   <select class="image-picker"></select>
+                   <span class="modal-confirm">
+                      <button type="button" class="btn btn-success" data-dismiss="modal">Select</button>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                   </span>
+               </div>
+       </div>
+   </div>
+
+      <script>
+      // Modal Trigger
+      $('select[name="options"]').on('change', function () {
+
+         // Declare Variables
+         var imageCleaner = function(response) {
+            if($('.image_picker_image').length > 0) {
+                  $('.image-picker').data('picker').destroy(); // Clears out any pre-existing modal images
+                  $('.image-picker').imagepicker(); // Creates images from new select option elements
+            } else {
+                  $('.image-picker').imagepicker(); // Creates images from new select option elements
+            }
+         };
+
+         var imageLoader = setTimeout( function() {
+             $('#myModal').modal('toggle'); // triggers modal window
+             $('.image-picker').imagepicker(); // reinitiates image loading
+          }, 100);
+
+          // Condition-based Image Loaders
+          if ($(this).val() == "swatches") {
+              $('.image-picker').load('data/swatches.html', imageCleaner).imageLoader;
+
+          } else if ($(this).val() == "abstract") {
+              $('.image-picker').load('data/abstract.html', imageCleaner).imageLoader;
+
+          } else if ($(this).val() == "city") {
+              $('.image-picker').load('data/city.html', imageCleaner).imageLoader;
+
+          } else if ($(this).val() == "nature") {
+              $('.image-picker').load('data/nature.html', imageCleaner).imageLoader;
+
+          } else if ($(this).val() == "sports") {
+              $('.image-picker').load('data/sports.html', imageCleaner).imageLoader;
+
+          } else if ($(this).val() == "tech") {
+              $('.image-picker').load('data/tech.html', imageCleaner).imageLoader;
+          }
+
+      });
+         /*
+         If div.thumbnail has class of .selected display HTML contents
+         */
+      </script>
+
+   </body>
+
+</html>

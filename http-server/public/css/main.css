@@ -1,0 +1,115 @@
+/*
+ * Author: Nick Fogle
+ * URL: http://nickfogle.com
+ *
+ */
+
+/* FONTS */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
+
+/* OVERALL ASPECT */
+
+body {
+  background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 70px;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #333;
+    text-align: center;
+}
+
+/* Image Picker */
+
+ul.thumbnails.image_picker_selector {
+  overflow: auto;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  }
+
+ul.thumbnails.image_picker_selector ul {
+    overflow: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    }
+
+ul.thumbnails.image_picker_selector li.group_title {
+    float: none; }
+
+ul.thumbnails.image_picker_selector li {
+    margin: 0px 12px 12px 0px;
+    }
+
+ul.thumbnails.image_picker_selector li .thumbnail {
+      padding: 8px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      }
+
+ul.thumbnails.image_picker_selector li .thumbnail img {
+      -webkit-user-drag: none;
+        }
+ul.thumbnails.image_picker_selector li .thumbnail.selected {
+      background: #0088cc;
+      }
+
+ul.thumbnails.image_picker_selector {
+   margin-top:20px;
+}
+
+.thumbnail {
+   border: none;
+}
+
+/* Links */
+a {
+    color: #f85c37;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+.modal-dialog {
+   width: 100%;
+}
+
+ul.thumbnails.image_picker_selector {
+   list-style: none;
+   padding: 20px 0;
+   margin: 0 auto;
+   text-align: center;
+   width: 100%;
+}
+
+ul.thumbnails.image_picker_selector > li {
+   display: inline-block;
+   margin: 10px 5px 0 5px;
+   vertical-align: top;
+   height: 250px;
+   float: none;
+}
+
+.initial-select {
+   display: block;
+   margin: 0 auto;
+}
+
+.modal-confirm {
+   float: right;
+}
